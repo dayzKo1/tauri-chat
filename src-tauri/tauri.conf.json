@@ -1,0 +1,87 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "yarn build",
+    "beforeDevCommand": "yarn dev",
+    "devPath": "http://localhost:8000",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "chat-desk",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "fs": { "all": true },
+      "shell": { "all": true },
+      "window": { "all": true },
+      "clipboard": { "all": true },
+      "path": { "all": true },
+      "dialog": { "all": true }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": ["icons/icon.ico"],
+      "identifier": "DeskChat",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "title": "",
+        "label": "login",
+        "width": 300,
+        "height": 440,
+        "resizable": false,
+        "center": true,
+        "visible": false,
+        "url": "/login",
+        "alwaysOnTop": true,
+        "decorations": false
+      },
+      {
+        "label": "intro",
+        "resizable": false,
+        "center": true,
+        "title": "",
+        "visible": true,
+        "url": "/intro",
+        "alwaysOnTop": true,
+        "decorations": false,
+        "transparent": true,
+        "width": 300,
+        "height": 440
+      }
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.ico"
+    }
+  }
+}
